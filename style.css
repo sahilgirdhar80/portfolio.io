@@ -3,7 +3,6 @@ body {
     background-color: #f4f4f4;
     color: #333;
     padding: 20px;
-
 }
 
 .header {
@@ -11,6 +10,10 @@ body {
     color: white; /* White text */
     padding: 20px; /* Add some padding */
     border-bottom: 2px solid #61dafb; /* Light blue border */
+}
+
+.header h1 {
+    margin: 0;
 }
 
 .nav {
@@ -37,91 +40,105 @@ body {
     color: black; /* Change text color for active link */
 }
 
-.display-4 {
-    font-size: 2.5rem; /* Increase font size */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+.about-me {
+    background-color: #f8f9fa; /* Light background color for the about section */
+    padding: 15px; /* Add some padding */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.card{
-    width: 300;
-    height: 300px;
-    perspective: 1000px;
-}
-.front, .back{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-}
-.front{
-    background-color: #bbb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.back{
-    background-color: #fff;
-    transform: rotateY(180deg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-}
-.card:hover .front{
-    transform: rotateY(180deg);
-}
-.card:hover .back{
-    transform: rotateY(0deg);
-}
-
-p{
-    padding-left: 50px;
-}
-.container{
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: azure;
-}
-.zone {
-    padding-top: 10px;
-    cursor:pointer;
-    /* display:inline-block; */
+.about-me h2 {
     text-align: center;
-    font-size:10em;
-    border-radius:4px;
-    border:1px solid #bbb;
+}
+
+.about-me img {
+    border-radius: 30%; /* Make the image circular */
+    border: 2px solid #007bff; /* Add a border around the image */
+    margin-bottom: 15px;
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.zone {
+    margin: 10px;
+    padding-top: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 10em;
+    border-radius: 4px;
+    border: 1px solid #bbb;
     transition: all 0.3s linear;
 }
 
 .zone:hover {
-    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
 }
 
+.card {
+    flex-basis: 48%;
+    margin: 10px;
+    position: relative;
+    height: 300px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    
+}
+
+.card .front, .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card .front {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .back {
+    background-color: #ecd8a4;
+    color: rgb(60, 54, 54);
+    font-size: 20px;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card:hover .front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: rotateY(0);
+}
 
 .footer {
     background-color: #282c34;
     color: #ffffff;
     padding: 40px 20px;
-    font-family: Arial, sans-serif;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    text-align: center;
 }
 
 .footer-section {
-    flex: 1;
-    min-width: 200px;
-    margin: 10px;
+    margin: 20px 0;
 }
 
 .footer-section h3 {
+    margin-bottom: 10px;
     border-bottom: 2px solid #ffffff;
     padding-bottom: 10px;
 }
@@ -156,7 +173,7 @@ p{
 .social-icon {
     color: #ffffff;
     text-decoration: none;
-    padding: 5px 10px;
+    padding:  5px 10px;
     border: 1px solid #ffffff;
     border-radius: 5px;
     transition: background-color 0.3s;
@@ -171,4 +188,80 @@ p{
     text-align: center;
     margin-top: 20px;
     font-size: 14px;
+}
+
+.footer {
+    background-color: #282c34; /* Dark background for footer */
+    color: #ffffff; /* White text */
+    padding: 40px 20px; /* Padding for footer */
+    text-align: center; /* Center text */
+    border-top: 2px solid #61dafb; /* Light blue border at the top */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Arrange items in a row */
+    justify-content: space-around; /* Space items evenly */
+    align-items: center; /* Center items vertically */
+}
+
+.footer-section {
+    margin: 0 20px; /* Margin for spacing */
+    flex: 1; /* Allow sections to grow and fill space */
+}
+
+.footer-section h3 {
+    margin-bottom: 10px; /* Space below heading */
+    border-bottom: 2px solid #ffffff; /* White border below heading */
+    padding-bottom: 10px; /* Padding below heading */
+    font-size: 1.5em; /* Increase font size for headings */
+}
+
+.footer-section p {
+    line-height: 1.6; /* Improve line height for readability */
+}
+
+.footer-section ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.footer-section ul li {
+    margin: 5px 0; /* Space between list items */
+}
+
+.footer-section ul li a {
+    color: #61dafb; /* Light blue color for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #ffffff; /* Change color on hover */
+}
+
+.social-media {
+    display: flex; /* Flexbox for social media icons */
+    justify-content: center; /* Center the icons */
+    gap: 10px; /* Space between icons */
+    margin-top: 20px; /* Space above social media section */
+}
+
+.social-icon {
+    color: #ffffff; /* White color for icons */
+    text-decoration: none; /* Remove underline */
+    padding: 10px; /* Padding for icons */
+    border: 1px solid #ffffff; /* White border */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.social-icon:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #282c34; /* Dark text color on hover */
+}
+
+.footer-bottom {
+    text-align: center; /* Center text */
+    margin-top: 20px; /* Space above footer bottom */
+    font-size: 14px; /* Font size for footer bottom */
+    color: #cccccc; /* Light gray color for footer bottom text */
 }
